@@ -2,6 +2,11 @@
 @import "./normalize.css";
 
 body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #444;
   font-weight: 400;
 }
@@ -45,7 +50,8 @@ form {
   width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   height: auto;
   border: 1px solid #ddd;
@@ -61,7 +67,7 @@ input, textarea {
     border: 1px solid $aqua;
   }
 }
-textarea{
+textarea {
   height: 60px;
 }
 button {
@@ -80,13 +86,23 @@ button {
   &:hover {
     border: 1px solid $aqua;
     background: transparent;
-    color:$aqua;
+    color: $aqua;
   }
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section ul {
+  padding-left: 20px;
+  list-style-type: circle;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 30px;
   tr {
     th {
       color: #666;
@@ -146,10 +162,11 @@ table {
               fill: #ccc;
             }
           }
-          &:hover, &.active {
+          &:hover,
+          &.active {
             padding-left: 5px;
             color: $aqua;
-            svg path{
+            svg path {
               fill: $aqua;
             }
           }
