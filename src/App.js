@@ -3,20 +3,21 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link 
+  NavLink 
 } from "react-router-dom";
 import { UserProvider } from './UserContext';
 
-import HomePage from './pages/HomePage';
+import Home from './pages/Home';
+import Github from './pages/Github';
 import Todos from './pages/Todos';
-import GithubLogin from './pages/GithubLogin';
+import GithubLogin from './components/github/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 
 import logo from './logo.svg';
 import './styles/App.scss';
 
-import { ReactComponent as Home } from './../src/assets/navigation/home.svg';
-import { ReactComponent as List } from './../src/assets/navigation/list.svg';
+import { ReactComponent as HomeIcon } from './../src/assets/navigation/home.svg';
+import { ReactComponent as ListIcon } from './../src/assets/navigation/list.svg';
 
 const App = () => {
   const setIsAuthenticated = (isAuthenticated, githubData) => {
@@ -41,10 +42,10 @@ const App = () => {
             <img src={logo} className="app__logo" alt="logo" />
             <ul>
               <li>
-                <Link to="/"><Home />Home</Link>
+                <NavLink to="/github"><HomeIcon />Github</NavLink>
               </li>
               <li>
-                <Link to="/todos"><List />Todos</Link>
+                <NavLink to="/todos"><ListIcon />Todos</NavLink>
               </li>
             </ul>
           </nav>
@@ -55,7 +56,8 @@ const App = () => {
             </div>
             <div className="app__content__inner">
               <Switch>
-                <ProtectedRoute exact path="/" component={HomePage} isAuthenticated={userState.isAuthenticated} />
+                <Route exact path="/" component={Home} />
+                <ProtectedRoute path="/github" component={Github} isAuthenticated={userState.isAuthenticated} />
                 <Route path="/todos" component={Todos} />
                 <Route path="/github-login" component={GithubLogin} />
               </Switch>

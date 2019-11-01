@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import useForm from "react-hook-form";
-import axios from 'axios';
-import UserContext from '../UserContext';
-import Loader from '../components/Loader';
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 
-const GithubLogin = () => {
+import UserContext from './../../UserContext';
+import Loader from './../../components/Loader';
+
+const Login = () => {
     const userContext = useContext(UserContext);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -27,7 +28,7 @@ const GithubLogin = () => {
     };
 
     if (userContext.isAuthenticated) {
-        return <Redirect to="/" />
+        return <Redirect to="/github" />
     }
 
     return (
@@ -51,4 +52,4 @@ const GithubLogin = () => {
     )
 }
 
-export default GithubLogin;
+export default Login;
