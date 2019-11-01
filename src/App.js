@@ -42,10 +42,10 @@ const App = () => {
             <img src={logo} className="app__logo" alt="logo" />
             <ul>
               <li>
-                <NavLink to={`${window.location.host}/github`}><HomeIcon />Github</NavLink>
+                <NavLink to={`${process.env.PUBLIC_URL}/github`}><HomeIcon />Github</NavLink>
               </li>
               <li>
-                <NavLink to={`${window.location.host}/todos`}><ListIcon />Todos</NavLink>
+                <NavLink to={`${process.env.PUBLIC_URL}/todos`}><ListIcon />Todos</NavLink>
               </li>
             </ul>
           </nav>
@@ -56,10 +56,10 @@ const App = () => {
             </div>
             <div className="app__content__inner">
               <Switch>
-                <Route exact path={`${window.location.host}/`} component={Home} />
-                <ProtectedRoute path={`${window.location.host}/github`} component={Github} isAuthenticated={userState.isAuthenticated} />
-                <Route path={`${window.location.host}/todos`} component={Todos} />
-                <Route path={`${window.location.host}/github-login`} component={GithubLogin} />
+                <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+                <ProtectedRoute path={`${process.env.PUBLIC_URL}/github`} component={Github} isAuthenticated={userState.isAuthenticated} />
+                <Route path={`${process.env.PUBLIC_URL}/todos`} component={Todos} />
+                <Route path={`${process.env.PUBLIC_URL}/github-login`} component={GithubLogin} />
               </Switch>
             </div>
           </div>

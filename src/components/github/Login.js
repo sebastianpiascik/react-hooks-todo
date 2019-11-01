@@ -28,7 +28,7 @@ const Login = () => {
     };
 
     if (userContext.isAuthenticated) {
-        return <Redirect to={`${window.location.host}/github`} />
+        return <Redirect to={`${process.env.PUBLIC_URL}/github`} />
     }
 
     return (
