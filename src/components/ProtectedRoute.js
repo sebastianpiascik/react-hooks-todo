@@ -5,7 +5,7 @@ const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => (
     <Route {...rest} render={(props) => (
         isAuthenticated === true
             ? <Component {...props} />
-            : <Redirect to="/github-login" />
+            : <Redirect to={`${process.env.PUBLIC_URL}/github-login`} />
     )} />
 )
 
