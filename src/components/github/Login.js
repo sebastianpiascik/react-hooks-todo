@@ -28,7 +28,7 @@ const Login = () => {
     };
 
     if (userContext.isAuthenticated) {
-        return <Redirect to="/github" />
+        return <Redirect to={`${window.location.host}/github`} />
     }
 
     return (
