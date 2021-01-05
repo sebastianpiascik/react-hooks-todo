@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://sebastianpiascik.github.io/react-hooks-todo",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "eslint": "^6.4.0",
     "gh-pages": "^2.1.1",
